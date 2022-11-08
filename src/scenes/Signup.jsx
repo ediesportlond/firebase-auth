@@ -14,7 +14,7 @@ const firebaseConfig = {
 export default function Signup({ setUser }) {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const handleLogin = async (e) => {
+    const handleSignup = async (e) => {
         e.preventDefault();
         
         const app = initializeApp(firebaseConfig); //connects to firebase
@@ -28,7 +28,7 @@ export default function Signup({ setUser }) {
     return (
         <>
             <h1>Signup</h1>
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleSignup}>
                 <label htmlFor="email">Email: </label>
                 <input type="email" name="email" value={email} onChange={e => setEmail(e.target.value)} placeholder="yourname@domain.com" />
                 <br />
